@@ -15,10 +15,15 @@ Instascan.Camera.getCameras().then(function (cameras) {
     for (var i=0; i < cameras.length; i++)
     {
       // Prefer any camera that mentions "back"
-      if (cameras[i].name.toLowerCase().includes("back"))
-      {
-        c = cameras[i];
-        break;
+      try {
+        if (cameras[i].name.toLowerCase().includes("back"))
+        {
+          c = cameras[i];
+          break;
+        }
+      }
+      catch(e)
+      {        
       }
     }
     scanner.start(c);
