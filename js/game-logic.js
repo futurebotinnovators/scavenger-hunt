@@ -3,9 +3,21 @@
 var gameLogic = {};
 
 gameLogic.data = [
-  {unlocked: false, image: "musk.jpg", name: "Elon Musk", clue: " where you microwave a hotdog", description: "Likes to play with rockets and electric cars.", container: {main: null}},
-  {unlocked: false, image: "gates.jpg", name: "Bill Gates", clue: " where you tickle the ivory", description: "Is saving many people in Africa.</br>He use to write some software.", container: {main: null}},
-  {unlocked: false, image: "hermine.jpg", name: "Ms. Granger", clue: " where you go when you gotta go", description: "She really is the brightest wizard of her age.", container: {main: null}},
+  {image: "musk.jpg",
+    name: "Elon Musk",
+    clue: " where you microwave a hotdog",
+    description: "Likes to play with rockets and electric cars.",
+    container: {main: null}, unlocked: false },
+  {image: "gates.jpg",
+    name: "Bill Gates",
+    clue: " where you tickle the ivory",
+    description: "Is saving many people in Africa.</br>He use to write some software.",
+    container: {main: null}, unlocked: false },
+  {image: "hermine.jpg",
+    name: "Ms. Granger",
+    clue: " where you go when you gotta go",
+    description: "She really is the brightest wizard of her age.",
+    container: {main: null}, unlocked: false },
 ]
 
 gameLogic.Start = function()
@@ -41,10 +53,10 @@ gameLogic.UpdateCard = function(id)
 //    container.image.innerHTML = ;
 //    container.name.innerHTML = this.data[id].name;
 //    container.age.innerHTML = this.data[id].age;
-    container.description.innerHTML = 
+    container.description.innerHTML =
     "<img class='photo' src='images/"+this.data[id].image+"'>"+
     "<img class='paperclip' src='images/paperclip.png'></img>" +
-    "<h1>"+this.data[id].name +"</h1>"+    
+    "<h1>"+this.data[id].name +"</h1>"+
     "<h2>"+this.data[id].description +"</h2>";
   }
   else
@@ -52,7 +64,7 @@ gameLogic.UpdateCard = function(id)
 //    container.image.innerHTML = "<img src='images/unknown.png' width=100 height=100>";
 //    container.name.innerHTML = "----";
 //    container.age.innerHTML = "----";
-    container.description.innerHTML =     
+    container.description.innerHTML =
     "<img class='photoStraight' src='images/unknown.png'>"+
     "<h1 class='unknownTitle'>Identity Unknown<h1>"+
     "<h2>Find the <img src='images/id0.jpg' width=60 height=60></img> " +
@@ -86,7 +98,7 @@ gameLogic.OnFoundId = function( id )
     this.data[id].container.row.classList.add("goGreenToInitial");
 
     var localId = id;
-    setTimeout(function(){    
+    setTimeout(function(){
       headerDiv.classList.remove("goGreenToBeige");
       gameLogic.data[localId].container.row.classList.remove("goGreenToInitial");
     } ,1500);
