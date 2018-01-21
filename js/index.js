@@ -16,6 +16,10 @@ Instascan.Camera.getCameras().then(function (cameras) {
     {
       // Prefer any camera that mentions "back"
       try {
+        var debug = document.getElementById('debug');
+        if (debug){
+          debug.innerHTML = debug.innerHTML + cameras[i].name + "</br>";
+        }
         if (cameras[i].name.toLowerCase().includes("back"))
         {
           c = cameras[i];
