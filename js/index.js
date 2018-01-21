@@ -37,4 +37,5 @@ Instascan.Camera.getCameras().then(function (cameras) {
   }
 }).catch(function (e) {
   console.error(e);
+  debug.innerHTML = debug.innerHTML + "error:" + e
 });
