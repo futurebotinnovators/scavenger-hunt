@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
           if (debug){
             debug.innerHTML = debug.innerHTML + cameras[i].name + "</br>";
           }
-          if (cameras[i].name.toLowerCase().includes("back"))
+          if (cameras[i].name.toLowerCase().includes("front"/*"back"*/))
           {
             c = cameras[i];
             break;
