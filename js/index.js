@@ -20,7 +20,7 @@ scanner.addListener('scan', function (content) {
 window.addEventListener('load', function() {
   Instascan.Camera.getCameras().then(function (cameras) {
     if (cameras.length > 0) {
-      var c = cameras[1]; // Default to second
+      var c = cameras[0]; // Default to first
       /*
       for (var i=0; i < cameras.length; i++)
       {
