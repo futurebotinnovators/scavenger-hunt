@@ -24,7 +24,7 @@ scanner.addListener('scan', function (content) {
 window.addEventListener('load', function() {
   Instascan.Camera.getCameras().then(function (cameras) {
     if (cameras.length > 0) {
-      var c = cameras[0]; // Default to first
+      var c = 0;// Default to first
       try {
         for (var i=0; i < cameras.length; i++)
         {
@@ -32,13 +32,13 @@ window.addEventListener('load', function() {
           console.log(cameras[i].name);
           if (cameras[i].name.toLowerCase().includes("back"))
           {
-            c = cameras[i];
+            c = i;
             break;
           }
         }
-        console.log( "selected ["+i+"]: "+c.name);
+        console.log( "selected ["+c+"]: "+cameras[c].name);
 
-        scanner.start(c);
+        scanner.start(cameras[c]);
       }
       catch(e)
       {
