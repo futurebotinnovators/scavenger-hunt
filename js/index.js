@@ -10,6 +10,8 @@ console.log = function (message) {
   }
   originalConsoleLog(message);
 }
+console.error = console.log;
+
 let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
 scanner.addListener('scan', function (content) {
   console.log(content);
@@ -34,7 +36,7 @@ window.addEventListener('load', function() {
             break;
           }
         }
-        console.log( "selected: "+c.name);
+        console.log( "selected ["+i+"]: "+c.name);
 
         scanner.start(c);
       }
@@ -46,7 +48,6 @@ window.addEventListener('load', function() {
       console.error('No cameras found.');
     }
   }).catch(function (e) {
-    console.error(e);
-    debug.innerHTML = debug.innerHTML + "error:" + e
+    console.error("error: "+e);
   });
 });
