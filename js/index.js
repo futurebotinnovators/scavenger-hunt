@@ -24,28 +24,27 @@ scanner.addListener('scan', function (content) {
 window.addEventListener('load', function() {
   Instascan.Camera.getCameras().then(function (cameras) {
     if (cameras.length > 0) {
-      scanner.start(cameras[1]);
-      /*
-      var c = 0; // Default to first
+      var sorted = cameras.sort(function(a, b){
+        // Prefer any camera that mentions "back"
+        return a.name.toLowerCase().includes("back") ? -1 : 1;
+      });
+
       try {
-        for (var i=0; i < cameras.length; i++)
+        for (var i=0; i < sorted.length; i++)
         {
-          // Prefer any camera that mentions "back"
-          console.log(cameras[i].name);
-          if (cameras[i].name.toLowerCase().includes("back"))
+          console.log("Checking: "+sorted[i].name);
+
+          if (scanner.start(sorted[i]))
           {
-            c = i;
+            console.log( "Selected: "+sorted[i].name);
             break;
           }
         }
-        console.log( "Selected ["+c+"]: "+cameras[c].name);
-
-        scanner.start(cameras[c]);
       }
       catch(e)
       {
           console.log( "got error: "+e + " skipping start.")
-      }*/
+      }
     } else {
       console.error('No cameras found.');
     }
