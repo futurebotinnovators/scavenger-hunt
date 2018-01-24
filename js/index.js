@@ -34,7 +34,7 @@ window.addEventListener('load', function() {
           console.log( "Launched: "+sorted[0].name);
         }).catch(function( err ){
           console.log( "Error trying to launch: "+sorted[0].name + ": "+err);
-          if (scanner.length > 1)
+          if (sorted.length > 1)
           {
             // Trying second choice
             scanner.start(sorted[1]).
