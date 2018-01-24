@@ -34,13 +34,6 @@ window.addEventListener('load', function() {
           console.log( "Launched: "+sorted[0].name);
         }).catch(function( err ){
           console.log( "Error trying to launch: "+sorted[0].name + ": "+err);
-          if (sorted.length > 1)
-          {
-            // Trying second choice
-            scanner.start(sorted[1]).
-            then(function(){console.log("Second chance success")}).
-            catch(function(err){console.log("second chance failed: "+err)});
-          }
         });
       }
       catch(e)
