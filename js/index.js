@@ -24,6 +24,8 @@ scanner.addListener('scan', function (content) {
 window.addEventListener('load', function() {
   Instascan.Camera.getCameras().then(function (cameras) {
     if (cameras.length > 0) {
+      scanner.start(cameras[1]);
+      /*
       var c = 0; // Default to first
       try {
         for (var i=0; i < cameras.length; i++)
@@ -43,7 +45,7 @@ window.addEventListener('load', function() {
       catch(e)
       {
           console.log( "got error: "+e + " skipping start.")
-      }
+      }*/
     } else {
       console.error('No cameras found.');
     }
