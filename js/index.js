@@ -30,18 +30,16 @@ window.addEventListener('load', function() {
       });
 
       try {
-        for (var i=0; i < sorted.length; i++)
-        {
-          console.log("Checking: "+sorted[i].name);
-
-          scanner.start(sorted[i]).then(function(){
-            console.log( "Launched: "+sorted[i].name);
-          }).catch(function( err ){
-            console.log( "Error trying to launch: "+sorted[i].name + ": "+err+" " + err.toString());
-            alert(JSON.stringify(err));
-          });
-          break;
-        }
+        scanner.start(sorted[0]).then(function(){
+          console.log( "Launched: "+sorted[0].name);
+        }).catch(function( err ){
+          console.log( "Error trying to launch: "+sorted[0].name + ": "+err);
+          if (scanner.length > 1)
+          {
+            // Trying second choice
+            scanner.start(sorted[1]);
+          }
+        });
       }
       catch(e)
       {
