@@ -34,8 +34,10 @@ window.addEventListener('load', function() {
         {
           console.log("Checking: "+sorted[i].name);
 
-          scanner.start(sorted[i]).catch(function( err ){
-            console.log( "Error trying to launch: "+sorted[i].name);
+          scanner.start(sorted[i]).then(function(){
+            console.log( "Launched: "+sorted[i].name);
+          }).catch(function( err ){
+            console.log( "Error trying to launch: "+sorted[i].name + ": "+err);
           });
           break;
         }
