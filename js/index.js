@@ -38,6 +38,7 @@ window.addEventListener('load', function() {
             console.log( "Launched: "+sorted[i].name);
           }).catch(function( err ){
             console.log( "Error trying to launch: "+sorted[i].name + ": "+err+" " + err.toString());
+            alert(JSON.stringify(err));
           });
           break;
         }
