@@ -34,11 +34,10 @@ window.addEventListener('load', function() {
         {
           console.log("Checking: "+sorted[i].name);
 
-          if (scanner.start(sorted[i]))
-          {
-            console.log( "Selected: "+sorted[i].name);
-            break;
-          }
+          scanner.start(sorted[i]).catch(function( err ){
+            console.log( "Error trying to launch: "+sorted[i].name);
+          });
+          break;
         }
       }
       catch(e)
