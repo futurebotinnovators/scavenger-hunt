@@ -2,6 +2,7 @@
 "use strict";
 
 var debugElement = document.getElementById('debug');
+/*
 var originalConsoleLog = console.log;
 console.log = function (message) {
   if (debugElement)
@@ -11,7 +12,7 @@ console.log = function (message) {
   originalConsoleLog(message);
 }
 console.error = console.log;
-
+*/
 let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
 scanner.addListener('scan', function (content) {
   console.log(content);
