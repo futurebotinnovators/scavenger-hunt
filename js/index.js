@@ -37,7 +37,9 @@ window.addEventListener('load', function() {
           if (scanner.length > 1)
           {
             // Trying second choice
-            scanner.start(sorted[1]);
+            scanner.start(sorted[1]).
+            then(function(){console.log("Second chance success")}).
+            catch(function(err){console.log("second chance failed: "+err)});
           }
         });
       }
