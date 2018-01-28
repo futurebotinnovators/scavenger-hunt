@@ -26,10 +26,16 @@ gameLogic.Start = function()
   this.statusElement = document.getElementById("status");
   this.CreateCards( document.getElementById("cardContainer") );
 
-  var launchId = parseInt(window.location.search.split("id=")[1]);
-  if (launchId >= 0 && launchId < this.data.length )
+  try {
+    var launchId = parseInt(window.location.search.split("id=")[1]);
+    if (launchId >= 0 && launchId < this.data.length )
+    {
+      this.OnFoundId(launchId);
+    }
+  }
+  catch(e)
   {
-    this.OnFoundId(launchId);
+    // Ignoring any trouble parsing the url
   }
 }
 
