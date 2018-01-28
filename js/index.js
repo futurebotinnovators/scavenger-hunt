@@ -25,22 +25,11 @@ scanner.addListener('scan', function (content) {
 window.addEventListener('load', function() {
   Instascan.Camera.getCameras().then(function (cameras) {
     if (cameras.length > 0) {
-      var sorted = cameras.sort(function(a, b){
-        // Prefer any camera that mentions "back"
-        return a.name.toLowerCase().includes("back") ? -1 : 1;
-      });
-
-      try {
-        scanner.start(sorted[0]).then(function(){
-          console.log( "Launched: "+sorted[0].name);
+      scanner.start(cameras[0]).then(function(){
+          console.log( "Launched: "+cameras[0].name);
         }).catch(function( err ){
-          console.log( "Error trying to launch: "+sorted[0].name + ": "+err);
-        });
-      }
-      catch(e)
-      {
-          console.log( "got error: "+e + " skipping start.")
-      }
+          console.log( "Error trying to launch: "+cameras[0].name + ": "+err);
+        });      
     } else {
       console.error('No cameras found.');
     }
