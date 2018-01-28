@@ -21,6 +21,12 @@ gameLogic.Start = function()
   this.statusElement = document.getElementById("status");
   this.CreateCards( document.getElementById("cardContainer") );
 
+  this.successPopup = document.getElementById("successDiv");
+
+  this.successPopup.style.display = "none";
+
+  this.successMessageElement = document.getElementById("successMessage");
+
   try {
     var launchId = parseInt(window.location.search.split("id=")[1]);
     if (launchId >= 0 && launchId < this.data.length )
@@ -116,7 +122,9 @@ gameLogic.CheckForSuccess = function()
     }
   }  
   // Must of had success!
-  alert(scavengerHuntData.successMessage);
+  this.successMessageElement.innerHTML = scavengerHuntData.successMessage;
+
+  this.successPopup.style.display = "table";
 
 }
 gameLogic.OnFoundId = function( id )
@@ -186,5 +194,9 @@ gameLogic.CreateCard = function( parentElement, id )
   // sets the border attribute of tbl to 2;
   tbl.setAttribute("border", "2");
 }
-
+gameLogic.SuccessClicked = function()
+{
+  this.successPopup.style.display = "none";
+  //this.successPopup.hidden = true;//setAttribute("hidden", true);
+}
 gameLogic.Start();
