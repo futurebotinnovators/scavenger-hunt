@@ -35,14 +35,14 @@ gameLogic.Start = function()
 }
 gameLogic.ScrollToCard = function(id)
 {
-  //doScrolling(", 1000);
-  this.data[id].container.main.scrollIntoView(false);
+  doScrolling("#card-"+id, 1000);
+  //this.data[id].container.main.scrollIntoView(false);
 
-/*
-  $('html, body').animate({
-    scrollTop: this.data[id].container.main.offsetTop
-}, 1000);
-*/
+
+  //$('html, body').animate({
+  //  scrollTop: this.data[id].container.main.offsetTop
+//}, 1000);
+
 }
 gameLogic.CreateCards = function( parentElement )
 {
@@ -71,7 +71,6 @@ gameLogic.UpdateCard = function(id)
     "<h1>"+t.name +"</h1>"+
     "<h2>"+t.description +"</h2>";
 
-    gameLogic.ScrollToCard(id);
   }
   else
   {
@@ -123,6 +122,9 @@ gameLogic.OnFoundId = function( id )
     } ,1500);
   }
   this.UpdateCards();
+
+  gameLogic.ScrollToCard(id);
+  
 }
 gameLogic.HandleScan = function( value )
 {

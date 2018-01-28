@@ -51,7 +51,7 @@ window.addEventListener('load', function() {
 
 // For smooth scrolling
 function getElementY(query) {
-  var headerSize = -350;
+  var headerSize = -500;
   return headerSize + window.pageYOffset + document.querySelector(query).getBoundingClientRect().top
 }
 

@@ -1,4 +1,4 @@
-html, body {
+body {
     //
     //
     margin: 60px auto;
@@ -7,8 +7,9 @@ html, body {
     width: 70%;
     background: black;
     margin: 0;
-    overflow-x: hidden;
-    max-width: 100%;
+    /* overflow-x: hidden; */
+    /* overflow-y: visible; */
+    /* max-width: 100%; */
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -55,6 +56,8 @@ ul.posts li {
     width: 100%;
     /* overflow-y: auto; */
     /*white-space: nowrap;*/
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .cardContainer {
@@ -68,11 +71,16 @@ table {
     background:url(../images/indexcard.jpg);
 }
 .scannerTable {
-background: none;
-/* left: 0; */
-/* float: left; */
-/* margin-left: 1em; */
-/* margin-right: 1em; */
+
+background: none;
+
+/* left: 0; */
+
+/* float: left; */
+
+/* margin-left: 1em; */
+
+/* margin-right: 1em; */
 }
 tbody {
 	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
@@ -135,9 +143,13 @@ tbody {
     */
 	padding:  0;
 }
-header {
+* {
+	/* outline: 1px solid red; */
 	background:beige
 	height:200px;
+* {
+	outline: 1px solid red;  }
+	outline:;
 }
 .headerDiv {
  position: fixed;
@@ -148,7 +160,9 @@ header {
  /* align-self: stretch; */
 }
 .main{
-  margin-top: 230px;
+  /*margin-top: 220px;*/
+  /* width: 100%; */
+  /* max-width: 100%; */
 }
 
 .goGreenToBeige {
@@ -192,4 +206,9 @@ h2{
 #videoContainer
 {
 	text-align:right;	
+}
+#dummy
+{
+
+	height:220px;
 }
