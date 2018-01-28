@@ -1,10 +1,14 @@
-body {
+html, body {
     //
-    //margin: 60px auto;
     //
-    //width: 70%;
+    margin: 60px auto;
+    //
+    //
+    width: 70%;
     background: black;
     margin: 0;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -64,12 +68,11 @@ table {
     background:url(../images/indexcard.jpg);
 }
 .scannerTable {
-
-background: none;
-
-/* left: 0; */
-
-/* float: left; */
+background: none;
+/* left: 0; */
+/* float: left; */
+/* margin-left: 1em; */
+/* margin-right: 1em; */
 }
 tbody {
 	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
@@ -139,11 +142,13 @@ header {
 .headerDiv {
  position: fixed;
  top: 0;
- width:100%;
+ width: 100%;
+ /* text-align: center; */
  background: beige;
+ /* align-self: stretch; */
 }
 .main{
-  margin-top: 160px;
+  margin-top: 230px;
 }
 
 .goGreenToBeige {
@@ -169,6 +174,22 @@ header {
 
 font-weight: lighter;
 }
+.mainHeading
+{
+	text-align: center;
+	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+}
 h2{
 	font-size:2em;
+	font-weight: bold;
+	/* margin-left: 1em; */
+	/* margin-right: 1em; */
+}
+#status
+{
+	text-align:right;
+}
+#videoContainer
+{
+	text-align:right;	
 }

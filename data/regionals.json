@@ -1,0 +1,115 @@
+scavengerHuntData = 
+{
+  heading: "Regionals Scavenger Hunt",
+  successMessage: "Congratulations, you can collect your prize.",
+  data: [
+    {
+      clue: {
+        name: "Identity Unknown", 
+        description: "where you microwave a hotdog",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Elon Musk",
+        description: "Likes to play with rockets and electric cars.",
+        image: "musk.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Identity Unknown", 
+        description: "where you tickle the ivory",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Bill Gates",
+        description: "Is saving many people in Africa.</br>He use to write some software.",
+        image: "gates.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Whereabouts Unknown", 
+        description: "where you go when you gotta go",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Ms. Granger",
+        description: "She really is the brightest wizard of her age.",
+        image: "hermine.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Whereabouts Unknown", 
+        description: "where you go when you gotta go",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Ms. Granger",
+        description: "She really is the brightest wizard of her age.",
+        image: "hermine.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Whereabouts Unknown", 
+        description: "where you go when you gotta go",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Ms. Granger",
+        description: "She really is the brightest wizard of her age.",
+        image: "hermine.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Whereabouts Unknown", 
+        description: "where you go when you gotta go",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Ms. Granger",
+        description: "She really is the brightest wizard of her age.",
+        image: "hermine.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Whereabouts Unknown", 
+        description: "where you go when you gotta go",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Ms. Granger",
+        description: "She really is the brightest wizard of her age.",
+        image: "hermine.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Whereabouts Unknown", 
+        description: "where you go when you gotta go",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Ms. Granger",
+        description: "She really is the brightest wizard of her age.",
+        image: "hermine.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Whereabouts Unknown", 
+        description: "where you go when you gotta go",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Ms. Granger",
+        description: "She really is the brightest wizard of her age.",
+        image: "hermine.jpg"
+        },
+    },  
+  ]
+}

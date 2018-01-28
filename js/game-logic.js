@@ -2,26 +2,21 @@
 
 var gameLogic = {};
 
-gameLogic.data = [
-  {image: "musk.jpg",
-    name: "Elon Musk",
-    clue: " where you microwave a hotdog",
-    description: "Likes to play with rockets and electric cars.",
-    container: {main: null}, unlocked: false },
-  {image: "gates.jpg",
-    name: "Bill Gates",
-    clue: " where you tickle the ivory",
-    description: "Is saving many people in Africa.</br>He use to write some software.",
-    container: {main: null}, unlocked: false },
-  {image: "hermine.jpg",
-    name: "Ms. Granger",
-    clue: " where you go when you gotta go",
-    description: "She really is the brightest wizard of her age.",
-    container: {main: null}, unlocked: false },
-]
+// Allows for clicking the QR code in the hint to do the same thing as scanning the code
+gameLogic.testMode = true;
 
 gameLogic.Start = function()
 {
+  document.getElementById("mainHeading").innerHTML = scavengerHuntData.heading;
+
+  gameLogic.data = scavengerHuntData.data;
+  for(var i=0;i<gameLogic.data.length; i++)
+  {
+    // Add some housekeeping to our data
+    gameLogic.data[i].container = {main: null};
+    gameLogic.data[i].unlocked = false;
+  }
+
   this.headerDiv = document.getElementById("headerDiv");
   this.statusElement = document.getElementById("status");
   this.CreateCards( document.getElementById("cardContainer") );
@@ -38,12 +33,23 @@ gameLogic.Start = function()
     // Ignoring any trouble parsing the url
   }
 }
+gameLogic.ScrollToCard = function(id)
+{
+  //doScrolling(", 1000);
+  this.data[id].container.main.scrollIntoView(false);
 
+/*
+  $('html, body').animate({
+    scrollTop: this.data[id].container.main.offsetTop
+}, 1000);
+*/
+}
 gameLogic.CreateCards = function( parentElement )
 {
   for (var i=0; i < this.data.length; i++)
   {
     var s = document.createElement("span");
+    s.id = "card-"+i;
     s.classList.add("cardContainer");
     this.data[i].container.main = s;
     this.CreateCard(s, i);
@@ -54,27 +60,34 @@ gameLogic.CreateCards = function( parentElement )
 gameLogic.UpdateCard = function(id)
 {
   var container = this.data[id].container;
+
   if (this.data[id].unlocked)
   {
-//    container.image.innerHTML = ;
-//    container.name.innerHTML = this.data[id].name;
-//    container.age.innerHTML = this.data[id].age;
+    var t = this.data[id].target;
+
     container.description.innerHTML =
-    "<img class='photo' src='images/"+this.data[id].image+"'>"+
+    "<img class='photo' src='images/"+t.image+"'>"+
     "<img class='paperclip' src='images/paperclip.png'></img>" +
-    "<h1>"+this.data[id].name +"</h1>"+
-    "<h2>"+this.data[id].description +"</h2>";
+    "<h1>"+t.name +"</h1>"+
+    "<h2>"+t.description +"</h2>";
+
+    gameLogic.ScrollToCard(id);
   }
   else
   {
-//    container.image.innerHTML = "<img src='images/unknown.png' width=100 height=100>";
-//    container.name.innerHTML = "----";
-//    container.age.innerHTML = "----";
+    var t = this.data[id].clue;
+
+
+    var testingCallback="";
+    if (this.testMode) // For testing
+    {
+      testingCallback = "onclick=gameLogic.OnFoundId("+id+")";
+    }
     container.description.innerHTML =
-    "<img class='photoStraight' src='images/unknown.png'>"+
-    "<h1 class='unknownTitle'>Identity Unknown<h1>"+
-    "<h2>Find the <img src='images/id0.jpg' width=60 height=60></img> " +
-    this.data[id].clue+"</h2>";
+    "<img class='photoStraight' src='images/"+t.image+"'>"+
+    "<h1 class='unknownTitle'>"+t.name+"<h1>"+
+    "<h2>Find the <img src='images/id0.jpg' width=60 height=60 "+testingCallback+"></img> " +
+    t.description+"</h2>";
   }
 }
 gameLogic.UpdateCards = function()
@@ -92,7 +105,7 @@ gameLogic.UpdateCards = function()
 }
 gameLogic.OnFoundId = function( id )
 {
-  console.log("Handling id: "+id);
+  //console.log("Handling id: "+id);
 
   var wasUnlocked = this.data[id].unlocked;
   this.data[id].unlocked = true;

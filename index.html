@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/kitt.css">
 		<script type="text/javascript" src="js/instascan.min.js"></script>
+<!--		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>	-->	
 	</head>
 	<body>
 	<div class="main">
@@ -12,11 +13,12 @@
 	  </div>
 		<header>
 		  <div id="headerDiv" class="headerDiv">
+		  <h2 id="mainHeading" class="mainHeading">Scavenger Hunt</h2>
 		  <table class="scannerTable">
 		  <tr>
 		  <td><h2>Scanning</h2><div id="debug"></div>
 		  </td>
-		  <td>
+		  <td id="videoContainer">
 		  <video id="preview" autoplay muted playsInline ></video>
 		  </td>
 		  <td id="status"><h2>----</h2>
@@ -38,6 +40,7 @@
 		  </div>
 		</header>
 	</div>
+	<script type="text/javascript" src="data/regionals.json"></script>
 	<script type="text/javascript" src="js/game-logic.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	</body>
