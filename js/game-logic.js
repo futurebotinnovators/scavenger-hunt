@@ -9,7 +9,7 @@ gameLogic.Start = function()
 {
   document.getElementById("mainHeading").innerHTML = scavengerHuntData.heading;
 
-  gameLogic.data = scavengerHuntData.data;
+  this.data = scavengerHuntData.data;
   for(var i=0;i<gameLogic.data.length; i++)
   {
     // Add some housekeeping to our data
@@ -25,7 +25,11 @@ gameLogic.Start = function()
     var launchId = parseInt(window.location.search.split("id=")[1]);
     if (launchId >= 0 && launchId < this.data.length )
     {
-      this.OnFoundId(launchId);
+      setTimeout(function()
+      {
+        gameLogic.OnFoundId(launchId);
+      }, 0)
+      
     }
   }
   catch(e)
@@ -102,6 +106,19 @@ gameLogic.UpdateCards = function()
   }
   this.statusElement.innerHTML = "<h2>Found "+unlockedCount+" of "+this.data.length+"</h2>";
 }
+gameLogic.CheckForSuccess = function()
+{
+  for (var i=0; i < this.data.length; i++)
+  {
+    if (!this.data[i].unlocked)
+    {
+      return;
+    }
+  }  
+  // Must of had success!
+  alert(scavengerHuntData.successMessage);
+
+}
 gameLogic.OnFoundId = function( id )
 {
   //console.log("Handling id: "+id);
@@ -124,6 +141,9 @@ gameLogic.OnFoundId = function( id )
   this.UpdateCards();
 
   gameLogic.ScrollToCard(id);
+
+  setTimeout(function(){gameLogic.CheckForSuccess()}, 2000);
+
   
 }
 gameLogic.HandleScan = function( value )
