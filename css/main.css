@@ -166,10 +166,10 @@ tbody {
 }
 
 .goGreenToBeige {
-	animation: fadeGreenToBeige 1s ease-out
+	animation: fadeGreenToBeige 2s ease-out
 }
 .goGreenToInitial {
-	animation: fadeGreenToInitial 1s ease-out
+	animation: fadeGreenToInitial 2s ease-out
 }
 .goYellow {
 

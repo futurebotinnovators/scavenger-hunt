@@ -35,7 +35,7 @@ gameLogic.Start = function()
 }
 gameLogic.ScrollToCard = function(id)
 {
-  doScrolling("#card-"+id, 1000);
+  doScrolling("#card-"+id, 750);
   //this.data[id].container.main.scrollIntoView(false);
 
 
@@ -119,7 +119,7 @@ gameLogic.OnFoundId = function( id )
     setTimeout(function(){
       headerDiv.classList.remove("goGreenToBeige");
       gameLogic.data[localId].container.row.classList.remove("goGreenToInitial");
-    } ,1500);
+    } ,2200);
   }
   this.UpdateCards();
 
