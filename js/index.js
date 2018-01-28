@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
 
       try {
         scanner.start(sorted[0]).then(function(){
-          console.log( "Launched: "+sorted[0].name);
+          console.log( sorted[0].name);
         }).catch(function( err ){
           console.log( "Error trying to launch: "+sorted[0].name + ": "+err);
         });
