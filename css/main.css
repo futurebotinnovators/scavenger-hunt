@@ -32,6 +32,7 @@ h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     -webkit-margin-before: 0;
+    margin-left: .2em;
 }
 p {
     font-size: 1.5em;
@@ -144,9 +145,8 @@ tbody {
 	padding:  0;
 }
 * {
-	/* outline: 1px solid red; */
-	background:beige
-	height:200px;
+	
+	
 * {
 	outline: 1px solid red;  }
 	outline:;
@@ -196,12 +196,12 @@ font-weight: lighter;
 h2{
 	font-size:2em;
 	font-weight: bold;
-	/* margin-left: 1em; */
-	/* margin-right: 1em; */
+	margin-left: 1em;
+	margin-right: 1em;
 }
 #status
 {
-	text-align:right;
+	text-align: center;
 }
 #videoContainer
 {
@@ -232,4 +232,8 @@ h2{
 	margin: 2em;
 	height: 100%;
 	width: 100;
+}
+#scanning
+{
+	text-align: center;
 }
