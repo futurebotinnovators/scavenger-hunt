@@ -1,15 +1,7 @@
 body {
-    //
-    //
-    margin: 60px auto;
-    //
-    //
-    width: 70%;
+    width: 100%;
     background: black;
     margin: 0;
-    /* overflow-x: hidden; */
-    /* overflow-y: visible; */
-    /* max-width: 100%; */
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -55,15 +47,12 @@ ul.posts li {
 
 .container {
     width: 100%;
-    /* overflow-y: auto; */
-    /*white-space: nowrap;*/
     overflow-x: hidden;
     overflow-y: hidden;
 }
 
 .cardContainer {
     width: 100em;
-    /* background-image: url(images/indexcard.jpg); */
 }
 table {
     display: inline-table;
@@ -72,26 +61,12 @@ table {
     background:url(../images/indexcard.jpg);
 }
 .scannerTable {
-
-background: none;
-
-/* left: 0; */
-
-/* float: left; */
-
-/* margin-left: 1em; */
-
-/* margin-right: 1em; */
+	background: none;
+	font-family: 'Helvetica', 'Arial', 'Sans-Serif';
 }
 tbody {
-	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
-//
 	font-family:'Helvetica', 'Arial', 'Sans-Serif';
-//
-	font-weight: bold;   
-//
-	font-size: large;
-	/* margin-top: 0; */
+	font-size:large;
 }
 
 .photo {
@@ -117,52 +92,26 @@ tbody {
 {
 	height: 300px;
 	vertical-align: top;
-	/* background-image: url(images/indexcard.jpg); */
-	/* background-color: green; */
 }
 
 .indexcard {
     display:block;
-    /* position:absolute; */
     background:url(images/indexcard.jpg);
-    /* background-repeat:no-repeat; */
-    /* background-size: 100% 100%; */
-    /*width:122px;
-    height:148px;*/
-    /* float:right; */
-    /* bottom:0; */
-    /* right:0; */
+
 }
 
 #preview {
-	/* width: 150px; */
 	height:100px;
-	/*
-    margin-left: auto;
-    margin-right: auto;
-    display: block
-    */
 	padding:  0;
 }
-* {
-	
-	
-* {
-	outline: 1px solid red;  }
-	outline:;
-}
+
 .headerDiv {
  position: fixed;
  top: 0;
  width: 100%;
- /* text-align: center; */
  background: beige;
- /* align-self: stretch; */
 }
 .main{
-  /*margin-top: 220px;*/
-  /* width: 100%; */
-  /* max-width: 100%; */
 }
 
 .goGreenToBeige {
@@ -191,7 +140,10 @@ font-weight: lighter;
 .mainHeading
 {
 	text-align: center;
-	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+	font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+	font-size: 3em;
+	margin: .1em;
 }
 h2{
 	font-size:2em;
@@ -222,11 +174,9 @@ h2{
 	text-align:center;
 	background-color:beige;
 	display:table;
-	/* pointer-events: visiblepainted; */
 }
 #successMessage
 {
-	/* display: table-cell; */
 	vertical-align:middle;
 	-webkit-margin-before: 10%;
 	margin: 2em;
@@ -235,5 +185,5 @@ h2{
 }
 #scanning
 {
-	text-align: center;
+	text-align: center;
 }
