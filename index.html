@@ -22,7 +22,7 @@
 		  <td id="videoContainer">
 		  <video id="preview" autoplay muted playsInline ></video>
 		  </td>
-		  <td id="status"><h2>----</h2>
+		  <td id="status" onclick="gameLogic.CheckForSuccess()"><h2>----</h2>
 		  </td>
 		  </tr>
 		  </table>
@@ -43,6 +43,10 @@
 	</div>
 	<div id="successDiv" class="popupDiv" onclick="gameLogic.SuccessClicked()">
 	<h1 id="successMessage">Success</h1>
+	<div id="buttons">
+	  <a id="okButton" class="button8">OK</a><br/>
+<a id="restartGameButton" onclick="gameLogic.OnRestartGame()" class="button8">Restart Game</a>
+	</div>
 	</div>
 	<script type="text/javascript" src="data/regionals.json"></script>
 	<script type="text/javascript" src="js/game-logic.js"></script>

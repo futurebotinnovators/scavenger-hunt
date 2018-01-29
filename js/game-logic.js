@@ -4,12 +4,12 @@ var gameLogic = {};
 
 // Allows for clicking the QR code in the hint to do the same thing as scanning the code
 gameLogic.testMode = true;
-
+gameLogic.storageTimeout = 60*60*24; // 24 hours
 gameLogic.Start = function()
 {
-  document.getElementById("mainHeading").innerHTML = scavengerHuntData.heading;
-
+  this.gameHeading = scavengerHuntData.heading;
   this.data = scavengerHuntData.data;
+
   for(var i=0;i<gameLogic.data.length; i++)
   {
     // Add some housekeeping to our data
@@ -27,6 +27,8 @@ gameLogic.Start = function()
 
   this.successMessageElement = document.getElementById("successMessage");
 
+  document.getElementById("mainHeading").innerHTML = this.gameHeading;   
+
   try {
     var launchId = parseInt(window.location.search.split("id=")[1]);
     if (launchId >= 0 && launchId < this.data.length )
@@ -42,6 +44,8 @@ gameLogic.Start = function()
   {
     // Ignoring any trouble parsing the url
   }
+
+  this.ReadStorage();
 }
 gameLogic.ScrollToCard = function(id)
 {
@@ -148,6 +152,7 @@ gameLogic.OnFoundId = function( id )
   }
   this.UpdateCards();
 
+  this.SaveStorage();
   gameLogic.ScrollToCard(id);
 
   setTimeout(function(){gameLogic.CheckForSuccess()}, 2000);
@@ -198,5 +203,54 @@ gameLogic.SuccessClicked = function()
 {
   this.successPopup.style.display = "none";
   //this.successPopup.hidden = true;//setAttribute("hidden", true);
+}
+gameLogic.SaveStorage = function()
+{
+  var unlockedArray = [];
+  for (var i=0; i < this.data.length; i++)
+  {
+    unlockedArray[i] = this.data[i].unlocked;
+  }
+  var d = { unlocked: unlockedArray, timeSaved: new Date() / 1000 };
+  window.localStorage[this.gameHeading] = JSON.stringify(d);
+}
+gameLogic.ReadStorage = function()
+{
+  try 
+  {
+    var d = JSON.parse( window.localStorage[this.gameHeading] ); 
+
+    var now = new Date() / 1000;
+    if (d.timeSaved + this.storageTimeout < now )
+    {
+      // Don't read it.  Its too old.
+    }
+    else
+    {
+      for (var i=0; i < this.data.length; i++)
+      {
+        if (d.unlocked[i])
+        {
+          this.data[i].unlocked = true;
+        }
+      }
+    }
+  }
+  catch(e)
+  {    
+    // Ignoring any read errors
+  }  
+
+  this.UpdateCards();
+}
+gameLogic.OnRestartGame = function()
+{
+  window.localStorage[this.gameHeading] = "";
+
+  for (var i=0; i < this.data.length; i++)
+  {
+    this.data[i].unlocked = false;
+  }
+  this.UpdateCards();  
 }
 gameLogic.Start();
