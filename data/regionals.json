@@ -1,12 +1,48 @@
-scavengerHuntData = 
+scavengerHuntData =
 {
-  heading: "Regionals Scavenger Hunt",
+  heading: "<img src='images/FIRSTLego_iconHorz_RGB.jpg' class='topLeftLogo'>Regionals Scavenger Hunt",
   successMessage: "Congratulations, you can collect your prize.",
   data: [
     {
       clue: {
-        name: "Identity Unknown", 
-        description: "where you microwave a hotdog",
+        name: "What company am I?",
+        description: "the company that rhymes with Disney.",
+        image: "unknown.png"
+        },
+      target: {
+        name: "The DiSTI Corporation",
+        description: "Provider of world-class UI software and virtual training solutions",
+        image: "DiSTILogo.png"
+        },
+    },
+    {
+      clue: {
+        name: "What's next?",
+        description: " where there are more robots and less project.",
+        image: "unknown.png"
+        },
+      target: {
+        name: "First Tech Challenge",
+        description: "2017-2018 season game will be our most incredible game yet.",
+        image: "ftc.png"
+        },
+    },
+    {
+      clue: {
+        name: "What company am I?",
+        description: "at the manufacturer that builds the F-35",
+        image: "unknown.png"
+        },
+      target: {
+        name: "Lockheed Martin",
+        description: "American global aerospace, defense, security and advanced technologies company.",
+        image: "f-35.jpg"
+        },
+    },
+    {
+      clue: {
+        name: "Identity Unknown",
+        description: "big batteries + big rockets",
         image: "unknown.png"
         },
       target: {
@@ -17,7 +53,7 @@ scavengerHuntData =
     },
     {
       clue: {
-        name: "Identity Unknown", 
+        name: "Identity Unknown",
         description: "where you tickle the ivory",
         image: "unknown.png"
         },
@@ -29,7 +65,7 @@ scavengerHuntData =
     },
     {
       clue: {
-        name: "Whereabouts Unknown", 
+        name: "Whereabouts Unknown",
         description: "where you go when you gotta go",
         image: "unknown.png"
         },
@@ -41,7 +77,7 @@ scavengerHuntData =
     },
     {
       clue: {
-        name: "Whereabouts Unknown", 
+        name: "Whereabouts Unknown",
         description: "where you go when you gotta go",
         image: "unknown.png"
         },
@@ -53,7 +89,7 @@ scavengerHuntData =
     },
     {
       clue: {
-        name: "Whereabouts Unknown", 
+        name: "Whereabouts Unknown",
         description: "where you go when you gotta go",
         image: "unknown.png"
         },
@@ -65,7 +101,7 @@ scavengerHuntData =
     },
     {
       clue: {
-        name: "Whereabouts Unknown", 
+        name: "Whereabouts Unknown",
         description: "where you go when you gotta go",
         image: "unknown.png"
         },
@@ -75,41 +111,5 @@ scavengerHuntData =
         image: "hermine.jpg"
         },
     },
-    {
-      clue: {
-        name: "Whereabouts Unknown", 
-        description: "where you go when you gotta go",
-        image: "unknown.png"
-        },
-      target: {
-        name: "Ms. Granger",
-        description: "She really is the brightest wizard of her age.",
-        image: "hermine.jpg"
-        },
-    },
-    {
-      clue: {
-        name: "Whereabouts Unknown", 
-        description: "where you go when you gotta go",
-        image: "unknown.png"
-        },
-      target: {
-        name: "Ms. Granger",
-        description: "She really is the brightest wizard of her age.",
-        image: "hermine.jpg"
-        },
-    },
-    {
-      clue: {
-        name: "Whereabouts Unknown", 
-        description: "where you go when you gotta go",
-        image: "unknown.png"
-        },
-      target: {
-        name: "Ms. Granger",
-        description: "She really is the brightest wizard of her age.",
-        image: "hermine.jpg"
-        },
-    },  
   ]
 }

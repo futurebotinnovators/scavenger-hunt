@@ -245,3 +245,10 @@ a.button8:active{
 		margin:0.2em auto;
 	}
 }
+.topLeftLogo
+{
+	position: fixed;
+    left: 20px;
+    top: 10px;
+    height: 50px;
+}
